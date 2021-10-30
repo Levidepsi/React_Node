@@ -2,7 +2,7 @@ import express from 'express'
 import {getPost, createPost} from '../controllers/post.js'
 import { check } from 'express-validator'
 import { requireSignin } from '../controllers/auth.js'
-import { userById } from '../controllers/user.js'
+
 // import {createPostValidator} from '../validators/index.js' 
 
 const router = express.Router()
@@ -22,6 +22,6 @@ router.post('/postcreate', [
     })
 ], requireSignin, createPost)
 
-router.param('userId', userById)
+
 
 export default router

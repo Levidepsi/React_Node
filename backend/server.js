@@ -6,6 +6,7 @@ import cookieParser from 'cookie-parser'
 import bodyParser from 'body-parser'
 import postRouter from './routes/post.js'
 import authRoutes from './routes/auth.js'
+import userRoutes from './routes/users.js'
 // import expressValidator from 'express-validator'
 
 dotenv.config()
@@ -33,12 +34,13 @@ app.use(express.urlencoded({
 
 app.use('/posts', postRouter)
 app.use('/', authRoutes)
+app.use('/', userRoutes)
 
 
 
 const PORT = process.env.PORT || 4000
 
-
+const DBConnection ='mongodb+srv://levi123:1234567890@levi.4hu76.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.connect(DBConnection, {useNewUrlParser: true, useUnifiedTopology: true})
 

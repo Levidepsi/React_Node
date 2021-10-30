@@ -1,7 +1,7 @@
 import express from 'express'
 import { check } from 'express-validator'
 import { signup, signin, signout,  } from '../controllers/auth.js'
-import { userById } from '../controllers/user.js'
+
 
 
 const router = express.Router()
@@ -22,6 +22,6 @@ router.post('/signin', signin )
 
 router.get('/signout', signout )
 
-router.param('userId', userById)
+
 
 export default router
