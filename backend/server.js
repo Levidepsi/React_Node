@@ -40,7 +40,7 @@ app.use('/', userRoutes)
 
 const PORT = process.env.PORT || 4000
 
-const DBConnection ='mongodb+srv://levi123:1234567890@levi.4hu76.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
+
 
 mongoose.connect(DBConnection, {useNewUrlParser: true, useUnifiedTopology: true})
 
